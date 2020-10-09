@@ -1,25 +1,22 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-
+import './App.scss';
+import {Container, Row, Col, Spinner } from "react-bootstrap";
+import { Sidebar, Header } from './component';
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <Container fluid>
+          <Header />
+          <hr />
+        <Row>
+          <Col xs={3} id="sidebar-wrapper">
+            <Sidebar />
+          </Col>
+          <Col  xs={9} id="page-content-wrapper">
+              <Spinner animation="grow" />
+          </Col>
+        </Row>
+
+      </Container>
   );
 }
 
