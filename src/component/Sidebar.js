@@ -5,7 +5,7 @@ import { Card, ListGroup} from "react-bootstrap";
 function Sidebar() {
     return (
         <Card>
-            <Card.Header>Categories</Card.Header>
+            <Card.Header>Contents</Card.Header>
             <ListGroup variant="flush">
                 <ListGroup.Item>Cras justo odio</ListGroup.Item>
                 <ListGroup.Item>Dapibus ac facilisis in</ListGroup.Item>

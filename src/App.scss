@@ -1,1 +1,18 @@
 @import "~bootstrap/scss/bootstrap";
+.main-content {
+  min-height: 100vh;
+}
+
+.loading-container {
+  z-index: 1000;
+  position: absolute;
+  background: grey;
+  opacity: 0.3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+}
