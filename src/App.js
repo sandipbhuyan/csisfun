@@ -1,10 +1,23 @@
 import React from 'react';
 import './App.scss';
-import {Container, Row, Col, Spinner, Card, Dropdown, DropdownButton } from "react-bootstrap";
-import {Sidebar, Header} from './component';
+import {
+    Container,
+    Row,
+    Col,
+    Spinner,
+    Card,
+    Dropdown,
+    DropdownButton
+} from "react-bootstrap";
+import {
+    Sidebar,
+    Header,
+    ListContent
+} from './component';
 
 function App() {
-    const [loading, setLoading] = React.useState(false)
+    const [loading, setLoading] = React.useState(false);
+    const data = [1,2,3,4,5,6,7,8,9];
     return (
         <Container fluid>
             {
@@ -22,7 +35,9 @@ function App() {
                 </Col>
                 <Col xs={7} id="page-content-wrapper">
                     <section className={"main-content"}>
-
+                        {
+                            data.map(val => ( <><ListContent /> <hr/></>))
+                        }
                     </section>
                 </Col>
                 <Col xs={2} id="page-content-wrapper">
