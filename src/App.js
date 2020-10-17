@@ -4,10 +4,7 @@ import {
     Container,
     Row,
     Col,
-    Spinner,
-    Card,
-    Dropdown,
-    DropdownButton
+    Spinner
 } from "react-bootstrap";
 import {
     Sidebar,
@@ -17,9 +14,22 @@ import {
 
 function App() {
     const [loading, setLoading] = React.useState(false);
-    const data = [1,2,3,4,5,6,7,8,9];
+    const data = [1, 2];
+    const [state, setState] = React.useState(0);
+    const [postId, setPostId] = React.useState(0);
+    const [category, setCategory] = React.useState(0);
+    const [type, setType] = React.useState("")
+    const selectCategory = (categoryId) => {
+        setLoading(true);
+        setCategory(categoryId);
+    }
+    const selectType = (type) => {
+        setLoading(true);
+        setType(type);
+    }
+
     return (
-        <Container fluid>
+        <div>
             {
                 loading ? (
                     <div className={"loading-container"}>
@@ -29,44 +39,23 @@ function App() {
             }
             <Header/>
             <hr/>
-            <Row>
-                <Col xs={3} id="sidebar-wrapper">
-                    <Sidebar/>
-                </Col>
-                <Col xs={7} id="page-content-wrapper">
-                    <section className={"main-content"}>
-                        {
-                            data.map(val => ( <><ListContent /> <hr/></>))
-                        }
-                    </section>
-                </Col>
-                <Col xs={2} id="page-content-wrapper">
-                    <Card>
-                        <Card.Header>Select Category</Card.Header>
-                        <Card.Body>
-                            <DropdownButton
-                                variant={"info"}
-                                title={"Section Section"}
-                            >
-                                <Dropdown.Item onClick={() => alert("Gmail")}>Action</Dropdown.Item>
-                                <Dropdown.Item onClick={() => alert("Gmail")}>Another action</Dropdown.Item>
-                                <Dropdown.Item onClick={() => alert("Gmail")}>Something else</Dropdown.Item>
-                            </DropdownButton >
-                            <hr/>
-                            <DropdownButton
-                                variant={"info"}
-                                title={"Section Type"}
-                            >
-                                <Dropdown.Item onClick={() => alert("Gmail")}>Quetions</Dropdown.Item>
-                                <Dropdown.Item onClick={() => alert("Gmail")}>Post</Dropdown.Item>
-                                <Dropdown.Item onClick={() => alert("Gmail")}>Something else</Dropdown.Item>
-                            </DropdownButton >
-                        </Card.Body>
-                    </Card>
-                </Col>
-            </Row>
+            <Container fluid>
+                <Row>
+                    <Col xs={3} id="sidebar-wrapper">
+                        <Sidebar state={1} selectCat={selectCategory} selectT={selectType}/>
+                    </Col>
+                    <Col xs={7} id="page-content-wrapper">
+                        <section className={"main-content"}>
+                            {
+                                data.map(val => ( <><ListContent /> <hr/></>))
+                            }
+                        </section>
+                    </Col>
+                </Row>
 
-        </Container>
+            </Container>
+
+        </div>
     );
 }
 
