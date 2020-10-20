@@ -1,0 +1,11 @@
+@import "./variables";
+
+.sidebar-header {
+  background: $theme-color;
+  opacity: 0.6;
+}
+
+.category-button {
+  margin: 2px;
+  font-weight: 500;
+}

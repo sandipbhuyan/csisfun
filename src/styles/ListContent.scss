@@ -1,0 +1,9 @@
+@import "./variables";
+
+.blog-list-content {
+  color: $theme-color;
+}
+
+.list-content:hover {
+  cursor: pointer;
+}

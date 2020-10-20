@@ -1,24 +1,26 @@
 import React from 'react';
-import '../App.scss';
+import '../styles/ListContent.scss';
 import {Card} from "react-bootstrap";
 
-function ListContent() {
+function ListContent({id, header, description, content, createdAt, selectPost}) {
     return (
-        <Card bg={"light"}>
-            <a href="">
-                <Card.Body>
-                    <Card.Title>Card Title Card Title Card Title</Card.Title>
-                    <Card.Subtitle className="mb-2 text-muted">Card Subtitle</Card.Subtitle>
-                    <Card.Text>
-                        Some quick example text to build on the card title and make up the bulk of
-                        the card's content.
-                    </Card.Text>
-                    <Card.Text>
-                        <small className="text-muted">Last updated 3 mins ago</small>
-                    </Card.Text>
-                </Card.Body>
+        <>
+            <a className={"list-content"} onClick={() => selectPost(id)}>
+                <Card bg={"light"}>
+                    <Card.Body>
+                        <Card.Title className={"blog-list-content"} as={"h4"}>{header}</Card.Title>
+                        <Card.Subtitle className="mb-2 text-muted">{description}</Card.Subtitle>
+                        <Card.Text>
+                            {content}
+                        </Card.Text>
+                        <Card.Text>
+                            <small className="text-muted">Last updated 3 mins ago</small>
+                        </Card.Text>
+                    </Card.Body>
+                </Card>
             </a>
-        </Card>
+            <hr/>
+        </>
     );
 }
 

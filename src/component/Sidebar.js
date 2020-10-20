@@ -1,5 +1,5 @@
 import React from 'react';
-import '../App.scss';
+import '../styles/Sidebar.scss';
 import { Card, Button} from "react-bootstrap";
 
 function Sidebar({ state, selectCat, selectT}) {
@@ -19,13 +19,13 @@ function Sidebar({ state, selectCat, selectT}) {
         selectT(type);
     }
     return (
-        <Card>
-            <Card.Header>{state === 0 ? "Categories": "Type"}</Card.Header>
+        <Card text={"white"}>
+            <Card.Header as={"h5"} className={"sidebar-header"}>{state ? "Categories": "Type"}</Card.Header>
             <Card.Body>
-                {state === 0 ? (<>
-                    {categories.map((val, index) => <Button variant="outline-info" onClick={() => selectCategory(index)}>{val}</Button>)}
+                {state ? (<>
+                    {categories.map((val, index) => <Button  className={"category-button"} variant={category === val ? "info" : "outline-info"} disabled={category === val} onClick={() => selectCategory(index)}>{val}</Button>)}
                 </>) : (<>
-                    {types.map((val) => <Button variant="outline-info" onClick={() => selectType(val)}>{val}</Button>)}
+                    {types.map((val) => <Button className={"category-button"}  variant={type === val ? "info" : "outline-info"} disabled={type === val} onClick={() => selectType(val)}>{val}</Button>)}
                 </>)}
             </Card.Body>
         </Card>
