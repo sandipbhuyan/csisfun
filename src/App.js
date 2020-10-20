@@ -25,14 +25,14 @@ const post = [
         header: "Post Header is a good header",
         description: "this is a good post you should get to read it",
         content: "The post is good to be at the first place. How are you, how are you reading the post I dont know. I think you are stupid",
-        createdAt: "20-10-2020 12:22:22"
+        createdAt: "2020-10-19 23:54:09"
     },
     {
         id: 2,
         header: "Post Header is a good header",
         description: "this is a good post you should get to read it",
         content: "The post is good to be at the first place. How are you, how are you reading the post I dont know. I think you are stupid",
-        createdAt: "20-10-2020 12:22:22"
+        createdAt: "2020-10-19 23:54:09"
     }
 ]
 

@@ -4,6 +4,10 @@ import {Card} from "react-bootstrap";
 import {
     Link
 } from "react-router-dom";
+import TimeAgo from 'javascript-time-ago'
+import en from 'javascript-time-ago/locale/en';
+TimeAgo.addDefaultLocale(en)
+const timeAgo = new TimeAgo('en-US')
 
 function ListContent({id, header, description, content, createdAt}) {
     return (
@@ -16,8 +20,9 @@ function ListContent({id, header, description, content, createdAt}) {
                         <Card.Text>
                             {content}
                         </Card.Text>
+
                         <Card.Text>
-                            <small className="text-muted">Last updated 3 mins ago</small>
+                            <small className="text-muted">{timeAgo.format(Date.parse(createdAt), 'round')}</small>
                         </Card.Text>
                     </Card.Body>
                 </Card>
