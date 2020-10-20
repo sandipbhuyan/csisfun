@@ -39,7 +39,6 @@ const post = [
 function App() {
     const [loading, setLoading] = React.useState(false);
     const [state, setState] = React.useState(true);
-    const [postId, setPostId] = React.useState(0);
     const [category, setCategory] = React.useState(0);
     const [type, setType] = React.useState("")
     const selectCategory = (categoryId) => {
@@ -55,19 +54,6 @@ function App() {
         setTimeout(() => {
             setLoading(false);
         }, 2000)
-    }
-
-    const changeState = () => {
-        setState(!state)
-        setTimeout(() => {
-            setLoading(false);
-        }, 2000)
-    }
-
-    const selectPost = (id) => {
-        setLoading(true);
-        setPostId(id);
-        changeState();
     }
 
     return (
