@@ -8,7 +8,7 @@ import {
 function ListContent({id, header, description, content, createdAt}) {
     return (
         <>
-            <Link to={"/post"} className={"list-content"}>
+            <Link to={"/post/" + id} className={"list-content"}>
                 <Card bg={"light"}>
                     <Card.Body>
                         <Card.Title className={"blog-list-content"} as={"h4"}>{header}</Card.Title>

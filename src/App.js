@@ -6,11 +6,11 @@ import {
     Col,
     Spinner
 } from "react-bootstrap";
+import { BrowserRouter as Router } from 'react-router-dom'
 import {
-    BrowserRouter as Router,
     Switch,
-    Route,
-} from "react-router-dom";
+    Route
+} from "react-router";
 
 import {
     Sidebar,
@@ -28,7 +28,7 @@ const post = [
         createdAt: "20-10-2020 12:22:22"
     },
     {
-        id: 1,
+        id: 2,
         header: "Post Header is a good header",
         description: "this is a good post you should get to read it",
         content: "The post is good to be at the first place. How are you, how are you reading the post I dont know. I think you are stupid",
@@ -96,7 +96,7 @@ function App() {
                                 <Route exact path="/">
                                     <Home post={post}/>
                                 </Route>
-                                <Route path="/post">
+                                <Route path="/post/:id">
                                     <Content/>
                                 </Route>
                             </Switch>
