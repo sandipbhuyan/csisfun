@@ -6,9 +6,9 @@ import '../styles/Content.scss';
 import {withRouter, } from "react-router";
 
 function Content(props) {
+    const [postId, setPostId] = React.useState(props.match.params.id)
     return (
         <div>
-            {props.match.params.id}
             {Parser(Data.content)}
         </div>
     );

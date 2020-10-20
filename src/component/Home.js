@@ -1,5 +1,5 @@
 import React from 'react';
-import '../App.scss';
+import '../styles/Home.scss';
 import {ListContent} from "./index";
 
 function Home({post}) {

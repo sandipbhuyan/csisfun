@@ -70,14 +70,14 @@ function App() {
             <Container fluid>
                 <Router>
                     <Row>
-                        <Col xs={3} id="sidebar-wrapper">
+                        <Col md={3} id="sidebar-wrapper">
                             <Switch>
                                 <Route exact path="/">
                                     <Sidebar state={true} selectCat={selectCategory} selectT={selectType}/>
                                 </Route>
                             </Switch>
                         </Col>
-                        <Col xs={7} id="page-content-wrapper">
+                        <Col md={7} id="page-content-wrapper">
                             <Switch>
                                 <Route exact path="/">
                                     <Home post={post}/>
