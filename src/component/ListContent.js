@@ -1,11 +1,14 @@
 import React from 'react';
 import '../styles/ListContent.scss';
 import {Card} from "react-bootstrap";
+import {
+    Link
+} from "react-router-dom";
 
-function ListContent({id, header, description, content, createdAt, selectPost}) {
+function ListContent({id, header, description, content, createdAt}) {
     return (
         <>
-            <a className={"list-content"} onClick={() => selectPost(id)}>
+            <Link to={"/post"} className={"list-content"}>
                 <Card bg={"light"}>
                     <Card.Body>
                         <Card.Title className={"blog-list-content"} as={"h4"}>{header}</Card.Title>
@@ -18,7 +21,7 @@ function ListContent({id, header, description, content, createdAt, selectPost}) 
                         </Card.Text>
                     </Card.Body>
                 </Card>
-            </a>
+            </Link>
             <hr/>
         </>
     );

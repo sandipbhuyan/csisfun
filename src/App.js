@@ -7,9 +7,16 @@ import {
     Spinner
 } from "react-bootstrap";
 import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+} from "react-router-dom";
+
+import {
     Sidebar,
     Header,
-    ListContent
+    Home,
+    Content
 } from './component';
 
 const post = [
@@ -75,28 +82,30 @@ function App() {
             <Header/>
             <hr/>
             <Container fluid>
-                <Row>
-                    <Col xs={3} id="sidebar-wrapper">
-                        <Sidebar state={state} selectCat={selectCategory} selectT={selectType}/>
-                    </Col>
-                    <Col xs={7} id="page-content-wrapper">
-                        <section className={"main-content"}>
-                            {
-                                post.map(val =>
-                                    <ListContent
-                                        id={val.id}
-                                        header={val.header}
-                                        description={val.description}
-                                        content={val.content}
-                                        createdAt={val.createdAt}
-                                        selectPost={selectPost}
-                                    />
-                                )
-                            }
-                        </section>
-                    </Col>
-                </Row>
-
+                <Router>
+                    <Row>
+                        <Col xs={3} id="sidebar-wrapper">
+                            <Switch>
+                                <Route path="/">
+                                    <Sidebar state={true} selectCat={selectCategory} selectT={selectType}/>
+                                </Route>
+                                <Route path="/post/content/">
+                                    <Sidebar state={false} selectCat={selectCategory} selectT={selectType}/>
+                                </Route>
+                            </Switch>
+                        </Col>
+                        <Col xs={7} id="page-content-wrapper">
+                            <Switch>
+                                <Route exact path="/">
+                                    <Home post={post}/>
+                                </Route>
+                                <Route path="/post">
+                                    <Content/>
+                                </Route>
+                            </Switch>
+                        </Col>
+                    </Row>
+                </Router>
             </Container>
 
         </div>
