@@ -86,11 +86,8 @@ function App() {
                     <Row>
                         <Col xs={3} id="sidebar-wrapper">
                             <Switch>
-                                <Route path="/">
+                                <Route exact path="/">
                                     <Sidebar state={true} selectCat={selectCategory} selectT={selectType}/>
-                                </Route>
-                                <Route path="/post/content/">
-                                    <Sidebar state={false} selectCat={selectCategory} selectT={selectType}/>
                                 </Route>
                             </Switch>
                         </Col>
