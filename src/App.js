@@ -19,22 +19,7 @@ import {
     Content
 } from './component';
 
-const post = [
-    {
-        id: 1,
-        header: "Post Header is a good header",
-        description: "this is a good post you should get to read it",
-        content: "The post is good to be at the first place. How are you, how are you reading the post I dont know. I think you are stupid",
-        createdAt: "2020-10-19 23:54:09"
-    },
-    {
-        id: 2,
-        header: "Post Header is a good header",
-        description: "this is a good post you should get to read it",
-        content: "The post is good to be at the first place. How are you, how are you reading the post I dont know. I think you are stupid",
-        createdAt: "2020-10-19 23:54:09"
-    }
-]
+import Data from './component/Data'
 
 function App() {
     const [loading, setLoading] = React.useState(false);
@@ -70,7 +55,7 @@ function App() {
             <Container fluid>
                 <Router>
                     <Row>
-                        <Col md={3} id="sidebar-wrapper">
+                        <Col md={2} id="sidebar-wrapper">
                             <Switch>
                                 <Route exact path="/">
                                     <Sidebar state={true} selectCat={selectCategory} selectT={selectType}/>
@@ -80,7 +65,7 @@ function App() {
                         <Col md={7} id="page-content-wrapper">
                             <Switch>
                                 <Route exact path="/">
-                                    <Home post={post}/>
+                                    <Home post={Data.createDummyPost(20)}/>
                                 </Route>
                                 <Route path="/post/:id">
                                     <Content/>

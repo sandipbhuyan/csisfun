@@ -287,4 +287,22 @@ module.exports.content = "<h2>Google Summer of Code 2019 Final Report. The proce
     "<li>My approach to solving a problem is also improved.</li>\n" +
     "<li>I have sharpened my knowledge on debugging and error correction process</li>\n" +
     "</ul>\n" +
-    "                            <p></p>"
+    "                            <p></p>";
+
+
+module.exports.createDummyPost = (requiredPost) => {
+    let counter = 1;
+    let res = [];
+    for(let i = 0; i < requiredPost; i++) {
+        let temp = {
+                id: counter,
+                header: "Post Header is a good header",
+                description: "this is a good post you should get to read it",
+                content: "The post is good to be at the first place. How are you, how are you reading the post I dont know. I think you are stupid",
+                createdAt: "2020-10-19 23:54:09"
+            }
+            res.push(temp);
+            counter++;
+    }
+    return res;
+}

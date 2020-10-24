@@ -1,6 +1,7 @@
 import React from 'react';
 import '../styles/Home.scss';
-import {ListContent} from "./index";
+import { ListContent } from "./index";
+import { withRouter } from "react-router";
 
 function Home({post}) {
     return (
@@ -20,4 +21,4 @@ function Home({post}) {
     );
 }
 
-export default Home;
+export default withRouter(Home);
