@@ -4,7 +4,15 @@
 /node_modules
 /.pnp
 .pnp.js
+
+# Editor Gitignores
 .idea/
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.code-workspace
 
 # testing
 /coverage
