@@ -23,7 +23,6 @@ import Data from './component/Data'
 
 function App() {
     const [loading, setLoading] = React.useState(false);
-    const [state, setState] = React.useState(true);
     const [category, setCategory] = React.useState(0);
     const [type, setType] = React.useState("")
     const selectCategory = (categoryId) => {
@@ -52,7 +51,7 @@ function App() {
             }
             <Header/>
             <hr/>
-            <Container fluid>
+            <Container className={"container-margin"} fluid>
                 <Router>
                     <Row>
                         <Col md={2} id="sidebar-wrapper">

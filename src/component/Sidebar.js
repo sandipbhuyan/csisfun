@@ -19,9 +19,9 @@ function Sidebar({state, selectCat, selectT}) {
         selectT(type);
     }
     return (
-        <Accordion defaultActiveKey="0">
-            <Card text={"white"}>
 
+        <Accordion defaultActiveKey="0" className={"sidebar-sticky"}>
+            <Card text={"white"}>
                 <Accordion.Toggle as={Card.Header} eventKey="0"
                                   className={"sidebar-header"}>{"Categories"}</Accordion.Toggle>
                 <Accordion.Collapse eventKey={"0"}>

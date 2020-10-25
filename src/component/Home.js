@@ -7,8 +7,9 @@ function Home({post}) {
     return (
         <section className={"main-content"}>
             {
-                post.map(val =>
+                post.map((val, index) =>
                     <ListContent
+                        key={index + "-blog-content"}
                         id={val.id}
                         header={val.header}
                         description={val.description}
