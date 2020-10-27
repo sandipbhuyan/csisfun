@@ -16,7 +16,8 @@ import {
     Sidebar,
     Header,
     Home,
-    Content
+    Content,
+    ShortNote
 } from './component';
 
 import Data from './component/Data'
@@ -68,6 +69,13 @@ function App() {
                                 </Route>
                                 <Route path="/post/:id">
                                     <Content/>
+                                </Route>
+                            </Switch>
+                        </Col>
+                        <Col md={3} id="sidebar-wrapper">
+                            <Switch>
+                                <Route exact path="/">
+                                    <ShortNote />
                                 </Route>
                             </Switch>
                         </Col>

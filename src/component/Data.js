@@ -306,3 +306,17 @@ module.exports.createDummyPost = (requiredPost) => {
     }
     return res;
 }
+
+module.exports.creatShortNotes = (requiredNotes) => {
+    let counter = 1;
+    let res = [];
+    for(let i = 0; i < requiredNotes; i++) {
+        let temp = {
+            id: counter,
+            content: 'Dummy note Dummy note and dummy note'
+        }
+        res.push(temp);
+        counter++;
+    }
+    return res;
+}

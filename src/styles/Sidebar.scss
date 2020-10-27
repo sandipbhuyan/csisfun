@@ -13,3 +13,12 @@
 .sidebar-header:hover {
   cursor: pointer;
 }
+
+.scroll-notes {
+  max-height: 60vh;
+  overflow-y: scroll;
+}
+
+.card-text {
+  color: black;
+}
