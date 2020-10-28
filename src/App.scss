@@ -42,3 +42,16 @@ a {
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
 }
+
+.heading-title {
+  color: gray;
+  font-size: 50px;
+  font-weight: 300;
+}
+.description-text {
+  color: gray;
+  font-size: 20px;
+  font-weight: 300;
+  font-style: oblique;
+  text-align: justify;
+}

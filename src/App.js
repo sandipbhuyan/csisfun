@@ -17,7 +17,8 @@ import {
     Header,
     Home,
     Content,
-    ShortNote
+    ShortNote,
+    About
 } from './component';
 
 import Data from './component/Data'
@@ -66,6 +67,9 @@ function App() {
                             <Switch>
                                 <Route exact path="/">
                                     <Home post={Data.createDummyPost(20)}/>
+                                </Route>
+                                <Route exact path="/about">
+                                    <About />
                                 </Route>
                                 <Route path="/post/:id">
                                     <Content/>
