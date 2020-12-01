@@ -68,16 +68,14 @@ function App() {
                                 <Route exact path="/">
                                     <Home post={Data.createDummyPost(20)}/>
                                 </Route>
-                                <Route path="/about">
-                                    <About/>
-                                </Route>
+                                <Route path="/about" component = {About} />
                                 <Route path="/post/:id">
                                     <Content/>
                                 </Route>
                             </Switch>
                         </Col>
                         <Col md={3} id="sidebar-wrapper">
-                            
+
                         </Col>
                     </Row>
                 </Router>
