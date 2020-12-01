@@ -68,8 +68,8 @@ function App() {
                                 <Route exact path="/">
                                     <Home post={Data.createDummyPost(20)}/>
                                 </Route>
-                                <Route exact path="/about">
-                                    <About />
+                                <Route path="/about">
+                                    <About/>
                                 </Route>
                                 <Route path="/post/:id">
                                     <Content/>
@@ -77,11 +77,7 @@ function App() {
                             </Switch>
                         </Col>
                         <Col md={3} id="sidebar-wrapper">
-                            <Switch>
-                                <Route exact path="/">
-                                    <ShortNote />
-                                </Route>
-                            </Switch>
+                            
                         </Col>
                     </Row>
                 </Router>
